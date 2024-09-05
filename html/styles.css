@@ -1,0 +1,11 @@
+/* styles.css */
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 10px;
+}

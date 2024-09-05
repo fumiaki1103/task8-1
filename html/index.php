@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <title>task2-2</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <table>
+        <tr>
+            <th>商品</th>
+            <th>価格</th>
+            <th>税込価格</th>
+        </tr>
+        <?php
+        $items = [
+            ["name" => "鉛筆", "price" => 100, "tax_price" => 110],
+            ["name" => "消しゴム", "price" => 200, "tax_price" => 220],
+            ["name" => "定規", "price" => 300, "tax_price" => 330]
+        ];
 
-  <?php
-$a = ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日']
-  ?>
-  <li><?= $a[0];?></li>
-  <li><?= $a[1];?></li>
-  <li><?= $a[2];?></li>
-  <li><?= $a[3];?></li>
-  <li><?= $a[4];?></li>
-  <li><?= $a[5];?></li>
-  <li><?= $a[6];?></li>
+        foreach ($items as $item) {
+            echo "<tr>";
+            echo "<td>{$item['name']}</td>";
+            echo "<td>{$item['price']}円</td>";
+            echo "<td>{$item['tax_price']}円</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
 </body>
 </html>
