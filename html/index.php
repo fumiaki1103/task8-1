@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>季節判定 - if文</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>曜日のリスト</title>
+<style>
+    .day-list {
+        font-family: Arial, sans-serif;
+        list-style-type: none;
+        padding: 0;
+    }
+    .day-list li {
+        padding: 5px;
+    }
+</style>
 </head>
 <body>
-    <?php
-    $month = rand(1, 12);
-    if ($month >= 3 && $month <= 5) {
-        $season = "春";
-    } elseif ($month >= 6 && $month <= 8) {
-        $season = "夏";
-    } elseif ($month >= 9 && $month <= 11) {
-        $season = "秋";
-    } else {
-        $season = "冬";
-    }
-    echo "<h1>{$month}月は{$season}の季節です。</h1>";
-    ?>
+
+<ul class="day-list">
+<?php
+$days = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
+$i = 0;
+while ($i < count($days)) {
+    echo "<li>・" . $days[$i] . "</li>";
+    $i++;
+}
+?>
+</ul>
+
+</body>
+</html>
+
+</ul>
+
 </body>
 </html>
