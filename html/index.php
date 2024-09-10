@@ -14,7 +14,13 @@
         padding: 8px;
     }
     .price-table th {
-        text-align: left;
+        background-color: #f2f2f2;
+    }
+    .price-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .price-table tr:hover {
+        background-color: #f1f1f1;
     }
 </style>
 </head>
