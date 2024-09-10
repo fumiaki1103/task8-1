@@ -2,35 +2,46 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>曜日のリスト</title>
+<title>商品価格表</title>
 <style>
-    .day-list {
+    .price-table {
         font-family: Arial, sans-serif;
-        list-style-type: none;
-        padding: 0;
+        border-collapse: collapse;
+        width: 50%;
     }
-    .day-list li {
-        padding: 5px;
+    .price-table th, .price-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    .price-table th {
+        text-align: left;
     }
 </style>
 </head>
 <body>
 
-<ul class="day-list">
-<?php
-$days = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-$i = 0;
-while ($i < count($days)) {
-    echo "<li>・" . $days[$i] . "</li>";
-    $i++;
-}
-?>
-</ul>
+<table class="price-table">
+    <tr>
+        <th>商品</th>
+        <th>価格</th>
+        <th>税込価格</th>
+    </tr>
+    <?php
+    $products = [
+        ["商品" => "鉛筆", "価格" => "100円", "税込価格" => "110円"],
+        ["商品" => "消しゴム", "価格" => "200円", "税込価格" => "220円"],
+        ["商品" => "定規", "価格" => "300円", "税込価格" => "330円"]
+    ];
 
-</body>
-</html>
-
-</ul>
+    foreach ($products as $product) {
+        echo "<tr>";
+        echo "<td>" . $product["商品"] . "</td>";
+        echo "<td>" . $product["価格"] . "</td>";
+        echo "<td>" . $product["税込価格"] . "</td>";
+        echo "</tr>";
+    }
+    ?>
+</table>
 
 </body>
 </html>
